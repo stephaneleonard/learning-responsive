@@ -1,0 +1,65 @@
+$font-size-p: 20px;
+$font-size-h: 42px;
+
+body {
+  background-color: blue;
+  display: grid;
+  grid-auto-columns: 1fr 1fr 1fr;
+  grid-template-areas: "small medium large";
+}
+
+#small{
+    grid-area: small;
+}
+#medium{
+    grid-area: medium;
+}
+#large{
+    grid-area: large;
+}
+
+h2 {
+  font-size: $font-size-h;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    background-color: green;
+    display: grid;
+    grid-template-areas: 
+    "small small medium"
+    "large large large";
+  }
+  p {
+    font-size: $font-size-p * 0.9;
+  }
+
+  h2 {
+    font-size: $font-size-h * 0.9;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  body {
+    background-color: red;
+    display: grid;
+    grid-template-areas: 
+    "small"
+    "medium"
+    "large"
+    ;
+  }
+
+  p {
+    font-size: $font-size-p * 0.5;
+  }
+
+  h2 {
+    font-size: $font-size-h * 0.5;
+  }
+}
+
+h2,
+p {
+  color: white;
+}
